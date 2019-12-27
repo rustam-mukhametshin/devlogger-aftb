@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Log} from '../models/Log';
+import {BehaviorSubject, Observable, of} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class LogService {
     ];
   }
 
-  getLogs() {
-    return this.logs;
+  getLogs(): Observable<Log[]> {
+    return of(this.logs);
   }
 }
