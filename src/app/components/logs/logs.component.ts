@@ -11,9 +11,12 @@ export class LogsComponent implements OnInit {
   logs: Log[];
 
 
-  constructor() { }
+  constructor(private logService: LogService) {
+
+  }
 
   ngOnInit() {
+    this.logs = this.logService.getLogs();
   }
 
 }
